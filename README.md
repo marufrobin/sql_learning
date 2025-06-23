@@ -21,4 +21,10 @@ means is to filter the data based on a condition
 
 `<=` means less than or equal to
 
+`AND` means is to combine multiple conditions where all conditions must be true
+
+`OR` means is to combine multiple conditions where at least one condition must be true
+
+`WHERE NOT (order_date >= '2013-01-01' AND status >= 2)`
+example of using NOT with AND
 ---
