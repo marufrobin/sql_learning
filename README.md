@@ -51,3 +51,14 @@ SELECT *
 FROM sql_store.Customers
 WHERE state NOT IN  ('VA', 'GA', 'FL');
 ```
+
+`BETWEEN` is used to filter data within a range
+
+```sql
+SELECT *
+FROM sql_store.customers
+
+-- WHERE points >= 1000 AND points<= 3000
+WHERE points BETWEEN 1000 AND 3000
+```
+
