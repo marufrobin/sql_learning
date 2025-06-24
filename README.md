@@ -1,6 +1,6 @@
 # SQL Learning
 
-` SELECT *`
+`SELECT *`
 means is select everything
 
 `FROM`
@@ -25,6 +25,20 @@ means is to filter the data based on a condition
 
 `OR` means is to combine multiple conditions where at least one condition must be true
 
-`WHERE NOT (order_date >= '2013-01-01' AND status >= 2)`
 example of using NOT with AND
+```sql
+WHERE NOT (order_date >= '2013-01-01' AND status >= 2)
+```
+
+
 ---
+
+```sql
+ WHERE state = "VA" or state = "GA" or state = "FL" 
+ ```
+
+instead of using OR you can use IN
+
+```sql
+WHERE state in ("VA", "GA", "FL")
+```
