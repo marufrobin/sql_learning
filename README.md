@@ -60,5 +60,24 @@ FROM sql_store.customers
 
 -- WHERE points >= 1000 AND points<= 3000
 WHERE points BETWEEN 1000 AND 3000
+
+```
+
+```sql
+SELECT *
+FROM sql_store.customers
+-- WHERE points >= 1000 AND points<= 3000
+-- WHERE points BETWEEN 1000 AND 3000
+WHERE birth_date BETWEEN '1990-01-01' AND '2000-01-01'
+```
+---
+`LIKE` is used to filter data based on a pattern
+`b%` means starts with `b`
+`%` is a wildcard that matches any sequence of characters
+
+```sql
+SELECT *
+FROM sql_store.customers
+WHERE last_name LIKE 'b%'
 ```
 
