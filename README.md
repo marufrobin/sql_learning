@@ -81,3 +81,42 @@ FROM sql_store.customers
 WHERE last_name LIKE 'b%'
 ```
 
+'_' is a wildcard that matches any single character
+
+```sql
+SELECT *
+FROM sql_store.customers
+WHERE last_name LIKE '_a%'
+```
+
+``` sql
+-- customer addresses contain TRAIL or AVENUE
+-- customer phone thoese end with 9
+WHERE address like '%TRAIL%' or 
+	  address like '%AVENUE%'or
+      phone like '%9'
+```
+
+The REGEXP function is used to filter data based on a regular expression pattern
+
+```sql
+SELECT *
+FROM sql_store.customers
+-- WHERE last_name LIKE '%field%'
+-- WHERE last_name REGEXP 'field'
+
+-- '^' sign means the begining of a string
+-- WHERE last_name REGEXP '^field'
+
+-- '$' sign means the end of a string 
+-- WHERE last_name REGEXP 'field$'
+
+-- '|' means or in string 
+WHERE last_name REGEXP 'field|mac|ros'
+
+-- '.*' means any character zero or more times
+WHERE last_name REGEXP '.*field.*'
+
+-- '^[a-zA-Z0-9]+$' means only alphanumeric characters
+WHERE last_name REGEXP '^[a-zA-Z0-9]+$'
+```
