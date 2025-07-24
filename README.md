@@ -147,3 +147,33 @@ WHERE first_name REGEXP 'ELKA|AMBUR'
 -- WHERE last_name REGEXP 'B[RU]'
 ```
 
+----
+The `IS NULL` operator is used to filter data where a column has no value (NULL).
+
+```sql
+-- This is NULL Operator
+-- SELECT *
+-- FROM sql_store.customers
+-- WHERE phone IS NOT NULL
+ 
+ 
+ -- Get the orders that are not shipped
+ SELECT *
+ FROM sql_store.orders
+ WHERE shipped_date IS NULL
+ 
+ ```
+----
+The `ORDER BY` clause is used to sort the result set by one or more columns.
+```sql
+SELECT *
+FROM sql_store.order_items
+-- ORDER BY state, first_name 
+-- ORDER BY state DESC, first_name ASC
+
+-- show order by total price
+
+WHERE quantity * unit_price AND order_id =2
+ORDER BY (quantity * unit_price) DESC 
+
+```
