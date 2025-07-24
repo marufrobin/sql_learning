@@ -99,6 +99,15 @@ WHERE address like '%TRAIL%' or
 
 The REGEXP function is used to filter data based on a regular expression pattern
 
+- `^` means the beginning of a string
+- `$` means the end of a string
+- `.` means any character
+- `*` means zero or more occurrences of the preceding character
+- `+` means one or more occurrences of the preceding character
+- `|` means logical OR
+- `[]` means a character class, matching any single character within the brackets
+- `[a-h]` means any single character from a to h
+
 ```sql
 SELECT *
 FROM sql_store.customers
@@ -119,4 +128,22 @@ WHERE last_name REGEXP '.*field.*'
 
 -- '^[a-zA-Z0-9]+$' means only alphanumeric characters
 WHERE last_name REGEXP '^[a-zA-Z0-9]+$'
+
+WHERE last_name regexp '[a-h]e'
+
+
+
+-- Get the customers whose
+-- first names are 'ELKA' or 'AMBUR'
+-- last names end with 'EY' or 'ON'
+-- last names start with 'MY' or contains 'SE'
+-- last names contain 'B' followed by 'R' or 'U'
+
+SELECT *
+FROM sql_store.customers
+WHERE first_name REGEXP 'ELKA|AMBUR'
+-- WHERE last_name REGEXP 'EY$|ON$'
+-- WHERE last_name REGEXP '^MY|SE'
+-- WHERE last_name REGEXP 'B[RU]'
 ```
+
