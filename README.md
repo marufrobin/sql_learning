@@ -175,5 +175,18 @@ FROM sql_store.order_items
 
 WHERE quantity * unit_price AND order_id =2
 ORDER BY (quantity * unit_price) DESC 
+```
+----
+
+```sql
+SELECT * , quantity * unit_price AS total_price 
+FROM sql_store.order_items
+-- ORDER BY state, first_name 
+-- ORDER BY state DESC, first_name ASC
+
+-- show order by total price
+
+WHERE  order_id =2
+ORDER BY total_price DESC 
 
 ```
